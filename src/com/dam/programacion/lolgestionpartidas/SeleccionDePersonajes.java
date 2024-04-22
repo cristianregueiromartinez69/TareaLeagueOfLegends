@@ -84,7 +84,7 @@ public class SeleccionDePersonajes extends JFrame {
         confirmBothPlayersButtom = new JButton("Confirmar");
         confirmBothPlayersButtom.setBackground(Color.GREEN);
         confirmBothPlayersButtom.setForeground(Color.WHITE);
-        confirmPanelPlayer1.add(confirmChampionsPLayer1Button);
+        confirmPanelPlayer1.add(confirmBothPlayersButtom);
         confirmAreaPlayer1 = new JTextArea();
         confirmAreaPlayer1.setEditable(false);
         confirmAreaPlayer1.setText("Area del jugador 1");
