@@ -70,7 +70,7 @@ public class AsignacionRoles extends JFrame {
         centerPanel.add(confirmPanel);
         confirmAreaPlayer1 = new JTextArea();
         confirmAreaPlayer1.setEditable(false);
-        confirmAreaPlayer1.setPreferredSize(new Dimension(150, 20));
+        confirmAreaPlayer1.setPreferredSize(new Dimension(150, 46));
         player1Panel.add(new JScrollPane(confirmAreaPlayer1));
         aliasPlayer1Indicator = new JLabel(enterJLabelPlayer1());
         player1Panel.add(aliasPlayer1Indicator);
@@ -104,7 +104,7 @@ public class AsignacionRoles extends JFrame {
         player2Panel.add(aliasPlayer2Indicator);
         confirmAreaPlayer2 = new JTextArea();
         confirmAreaPlayer2.setEditable(false);
-        confirmAreaPlayer2.setPreferredSize(new Dimension(150, 20));
+        confirmAreaPlayer2.setPreferredSize(new Dimension(150, 46));
         player2Panel.add(new JScrollPane(confirmAreaPlayer2));
         championsBoxPlayer2 = new JComboBox<>(addElementsComboBoxPlayer2(SeleccionDePersonajes.getPlayersWithChampions()));
         player2Panel.add(championsBoxPlayer2);
@@ -133,11 +133,13 @@ public class AsignacionRoles extends JFrame {
         confirmBothPlayers.setBackground(Color.GREEN);
         confirmBothPlayers.setForeground(Color.WHITE);
         confirmPanel.add(confirmBothPlayers);
-        championsBoxPlayer1.addActionListener(this::assignRolesToChampionsPlayer1);
-        championsBoxPlayer2.addActionListener(this::assignRolesToChampionsPlayer2);
+        rolBoxPLayer1.addActionListener(this::assignRolesToChampionsPlayer1);
+        rolBoxPLayer2.addActionListener(this::assignRolesToChampionsPlayer2);
         confirmBothPlayers.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                addElementtrainingRolesPlayer1(enterJLabelPlayer1(), rolsChampionsPLayer1);
+                addElementtrainingRolesPlayer2(enterJLabelPlayer2(), rolsChampionsPLayer2);
                 new FormacionEquipo();
                 dispose();
             }
@@ -148,102 +150,103 @@ public class AsignacionRoles extends JFrame {
     public void assignRolesToChampionsPlayer1(ActionEvent e){
 
         String championSelected = (String) championsBoxPlayer1.getSelectedItem();
-        String rolSelected = (String) championsBoxPlayer2.getSelectedItem();
+        String rolSelected = (String) rolBoxPLayer1.getSelectedItem();
         switch (rolSelected) {
             case "Tank":
                 Object[] row1 = {championSelected + ": " + rolSelected};
                 modelTablePlayer1.addRow(row1);
-                confirmAreaPlayer1.setText("rol añadido");
+                confirmAreaPlayer1.setText("Campeon: " + championSelected + "\ncon rol de: " + rolSelected + "\nañadido");
                 addElementRolsChampionPlayer1(championSelected, rolSelected);
                 break;
             case "Healer":
                 Object[] row2 = {championSelected + ": " + rolSelected};
                 modelTablePlayer1.addRow(row2);
-                confirmAreaPlayer1.setText("rol añadido");
+                confirmAreaPlayer1.setText("Campeon: " + championSelected + "\ncon rol de: " + rolSelected + "\nañadido");
                 addElementRolsChampionPlayer1(championSelected, rolSelected);
                 break;
             case "Assasin":
                 Object[] row3 = {championSelected + ": " + rolSelected};
                 modelTablePlayer1.addRow(row3);
-                confirmAreaPlayer1.setText("rol añadido");
+                confirmAreaPlayer1.setText("Campeon: " + championSelected + "\ncon rol de: " + rolSelected + "\nañadido");
                 addElementRolsChampionPlayer1(championSelected, rolSelected);
                 break;
             case "Fighter":
                 Object[] row4 = {championSelected + ": " + rolSelected};
                 modelTablePlayer1.addRow(row4);
-                confirmAreaPlayer1.setText("rol añadido");
+                confirmAreaPlayer1.setText("Campeon: " + championSelected + "\ncon rol de: " + rolSelected + "\nañadido");
                 addElementRolsChampionPlayer1(championSelected, rolSelected);
                 break;
             case "Shotter":
                 Object[] row5 = {championSelected + ": " + rolSelected};
                 modelTablePlayer1.addRow(row5);
-                confirmAreaPlayer1.setText("rol añadido");
+                confirmAreaPlayer1.setText("Campeon: " + championSelected + "\ncon rol de: " + rolSelected + "\nañadido");
                 addElementRolsChampionPlayer1(championSelected, rolSelected);
                 break;
             case "Wizards":
                 Object[] row6 = {championSelected + ": " + rolSelected};
                 modelTablePlayer1.addRow(row6);
-                confirmAreaPlayer1.setText("rol añadido");
+                confirmAreaPlayer1.setText("Campeon: " + championSelected + "\ncon rol de: " + rolSelected + "\nañadido");
                 addElementRolsChampionPlayer1(championSelected, rolSelected);
                 break;
 
 
         }
-        addElementtrainingRolesPlayer1(enterJLabelPlayer1(), rolsChampionsPLayer1);
+
+
     }
     public void assignRolesToChampionsPlayer2(ActionEvent e){
 
         String championSelected = (String) championsBoxPlayer2.getSelectedItem();
-        String rolSelected = (String) championsBoxPlayer2.getSelectedItem();
+        String rolSelected = (String) rolBoxPLayer2.getSelectedItem();
         switch (rolSelected) {
             case "Tank":
                 Object[] row1 = {championSelected + ": " + rolSelected};
                 modelTablePlayer2.addRow(row1);
-                confirmAreaPlayer2.setText("rol añadido");
+                confirmAreaPlayer2.setText("Campeon: " + championSelected + "\ncon rol de: " + rolSelected + "\nañadido");
                 addElementRolsChampionPlayer2(championSelected, rolSelected);
                 break;
             case "Healer":
                 Object[] row2 = {championSelected + ": " + rolSelected};
                 modelTablePlayer2.addRow(row2);
-                confirmAreaPlayer2.setText("rol añadido");
+                confirmAreaPlayer2.setText("Campeon: " + championSelected + "\ncon rol de: " + rolSelected + "\nañadido");
                 addElementRolsChampionPlayer2(championSelected, rolSelected);
                 break;
             case "Assasin":
                 Object[] row3 = {championSelected + ": " + rolSelected};
                 modelTablePlayer2.addRow(row3);
-                confirmAreaPlayer2.setText("rol añadido");
+                confirmAreaPlayer2.setText("Campeon: " + championSelected + "\ncon rol de: " + rolSelected + "\nañadido");
                 addElementRolsChampionPlayer2(championSelected, rolSelected);
                 break;
             case "Fighter":
                 Object[] row4 = {championSelected + ": " + rolSelected};
                 modelTablePlayer2.addRow(row4);
-                confirmAreaPlayer2.setText("rol añadido");
+                confirmAreaPlayer2.setText("Campeon: " + championSelected + "\ncon rol de: " + rolSelected + "\nañadido");
                 addElementRolsChampionPlayer2(championSelected, rolSelected);
                 break;
             case "Shotter":
                 Object[] row5 = {championSelected + ": " + rolSelected};
                 modelTablePlayer2.addRow(row5);
-                confirmAreaPlayer2.setText("rol añadido");
+                confirmAreaPlayer2.setText("Campeon: " + championSelected + "\ncon rol de: " + rolSelected + "\nañadido");
                 addElementRolsChampionPlayer2(championSelected, rolSelected);
                 break;
             case "Wizards":
                 Object[] row6 = {championSelected + ": " + rolSelected};
                 modelTablePlayer2.addRow(row6);
-                confirmAreaPlayer2.setText("rol añadido");
-                addElementRolsChampionPlayer1(championSelected, rolSelected);
+                confirmAreaPlayer2.setText("Campeon: " + championSelected + "\ncon rol de: " + rolSelected + "\nañadido");
+                addElementRolsChampionPlayer2(championSelected, rolSelected);
                 break;
 
 
         }
-        addElementtrainingRolesPlayer2(enterJLabelPlayer2(), rolsChampionsPLayer2);
+
 
     }
 
-    private String enterJLabelPlayer1(){
+    public String enterJLabelPlayer1(){
 
         return SeleccionDePersonajes.getAliasPlayer1Text().getText();
     }
-    private String enterJLabelPlayer2(){
+    public String enterJLabelPlayer2(){
 
         return SeleccionDePersonajes.getAliasPlayer2Text().getText();
     }
@@ -311,7 +314,7 @@ public class AsignacionRoles extends JFrame {
     }
     public static void addElementRolsChampionPlayer2(String key, String value){
 
-        rolsChampionsPLayer1.put(key, value);
+        rolsChampionsPLayer2.put(key, value);
     }
 
     public static HashMap<String, String> getRolsChampionsPLayer1() {
@@ -329,7 +332,7 @@ public class AsignacionRoles extends JFrame {
     }
     public static void addElementtrainingRolesPlayer2(String key, HashMap<String, String> elementtrainingRolesPlayer2){
 
-        trainingRolesPlayer1.put(key, elementtrainingRolesPlayer2);
+        trainingRolesPlayer2.put(key, elementtrainingRolesPlayer2);
 
     }
 

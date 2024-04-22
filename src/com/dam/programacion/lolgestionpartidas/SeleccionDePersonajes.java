@@ -88,7 +88,7 @@ public class SeleccionDePersonajes extends JFrame {
         confirmAreaPlayer1 = new JTextArea();
         confirmAreaPlayer1.setEditable(false);
         confirmAreaPlayer1.setText("Area del jugador 1");
-        confirmAreaPlayer1.setPreferredSize(new Dimension(150, 20));
+        confirmAreaPlayer1.setPreferredSize(new Dimension(150, 46));
         confirmPanelPlayer1.add(new JScrollPane(confirmAreaPlayer1));
         //---------------------------------------------------//
         aliasPlayer2Indictor = new JLabel("Alias Jugador 2");
@@ -113,7 +113,7 @@ public class SeleccionDePersonajes extends JFrame {
         confirmAreaPlayer2 = new JTextArea();
         confirmAreaPlayer2.setText("Area del jugador 2");
         confirmAreaPlayer2.setEditable(false);
-        confirmAreaPlayer2.setPreferredSize(new Dimension(150, 20));
+        confirmAreaPlayer2.setPreferredSize(new Dimension(150, 46));
         confirmPanelPlayer1.add(new JScrollPane(confirmAreaPlayer2));
         championsBoxPlayer1.addActionListener(this::selectChampionsPlayer1);
         championsBoxPlayer2.addActionListener(this::selectChampionsPlayer2);
@@ -180,13 +180,13 @@ public class SeleccionDePersonajes extends JFrame {
 
 
             }
-            confirmAreaPlayer1.setText(championName + " Añadido correctamente");
+            confirmAreaPlayer1.setText("Campeon: " + championName + "\nañadido");
             addChampion(alias, championName);
 
 
         }
         else {
-            confirmAreaPlayer1.setText("Limite de jugadores alcanzado o alias incorrecto");
+            confirmAreaPlayer1.setText("alias incorrecto");
         }
     }
 
@@ -239,11 +239,11 @@ public class SeleccionDePersonajes extends JFrame {
 
 
             }
-            confirmAreaPlayer2.setText(championName + " Añadido correctamente");
+            confirmAreaPlayer2.setText("Campeon: " + championName + "\nañadido");
             addChampion(alias, championName);
 
         } else {
-            confirmAreaPlayer2.setText("Limite de jugadores alcanzado o alias incorrecto");
+            confirmAreaPlayer2.setText("alias incorrecto");
         }
     }
 
@@ -259,8 +259,13 @@ public class SeleccionDePersonajes extends JFrame {
 
     private DefaultComboBoxModel addElementsComboBoxPlayer2(ArrayList<String> championsList) {
         DefaultComboBoxModel<String> championsBoxListPlayer2 = new DefaultComboBoxModel<>();
+        int count = 0;
+        int maxChampions = 10;
         for (String name : championsList) {
-            championsBoxListPlayer2.addElement(name);
+            if (count < maxChampions){
+                championsBoxListPlayer2.addElement(name);
+            }
+            count++;
         }
         return championsBoxListPlayer2;
     }

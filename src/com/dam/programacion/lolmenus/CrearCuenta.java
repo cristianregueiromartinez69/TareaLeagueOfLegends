@@ -44,7 +44,7 @@ public class CrearCuenta extends JFrame {
         aliasText = new JTextField(10);
         registrationPanel.add(aliasText);
         confirmArea = new JTextArea();
-        confirmArea.setPreferredSize(new Dimension(100,20));
+        confirmArea.setPreferredSize(new Dimension(100,60));
         confirmArea.setEditable(false);
         confirmPanel.add(new JScrollPane(confirmArea));
         confirmButton = new JButton("Confirmar");
@@ -60,7 +60,7 @@ public class CrearCuenta extends JFrame {
 
         if(checkEmptyContet()){
             String auxAliasText = aliasText.getText();
-            confirmArea.setText("Cuenta de alias " + auxAliasText + " creada correctamnete");
+            confirmArea.setText("Cuenta de alias " + auxAliasText + "\ncreada " + "\ncorrectamente");
             aliasList.add(auxAliasText);
 
         }
