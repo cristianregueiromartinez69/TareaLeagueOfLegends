@@ -236,8 +236,9 @@ public class FormacionEquipo extends JFrame {
         confirmBothPLayersButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                putValuesPlayersWithAll(returnHashMapPlayer1(SeleccionDePersonajes.getPlayersWithChampions()), getChampionsWithFormationPlayer1());
-                putValuesPlayersWithAll(returnHashMapPlayer22(SeleccionDePersonajes.getPlayersWithChampions()), getChampionsWithFormationPlayer2());
+                putValuesPlayersWithAll(SeleccionDePersonajes.getPlayersWithChampions(), getChampionsWithFormationPlayer1());
+                putValuesPlayersWithAll(SeleccionDePersonajes.getPlayersWithChampions(), getChampionsWithFormationPlayer2());
+                System.out.println(playersWithAll);
                 new Partida();
                 dispose();
             }
@@ -383,7 +384,7 @@ public class FormacionEquipo extends JFrame {
 
         HashMap<String, ArrayList<String>> resultHashMap = new HashMap<>();
         if(auxMap.containsKey(nameForLook)){
-            resultHashMap.putAll((Map<? extends String, ? extends ArrayList<String>>) auxMap.get(nameForLook));
+            resultHashMap.putAll(auxMap);
         }
 
 
@@ -391,12 +392,12 @@ public class FormacionEquipo extends JFrame {
         return resultHashMap;
     }
 
-    private HashMap<String, ArrayList<String>> returnHashMapPlayer22(HashMap<String, ArrayList<String>> auxMap) {
+    private HashMap<String, ArrayList<String>> returnHashMapPlayer2(HashMap<String, ArrayList<String>> auxMap) {
         String nameForLook = SeleccionDePersonajes.getAliasPlayer2Indictor().getText();
 
         HashMap<String, ArrayList<String>> resultHashMap = new HashMap<>();
         if(auxMap.containsKey(nameForLook)){
-            resultHashMap.putAll((Map<? extends String, ? extends ArrayList<String>>) auxMap.get(nameForLook));
+            resultHashMap.putAll(auxMap);
         }
 
 
@@ -406,22 +407,11 @@ public class FormacionEquipo extends JFrame {
 
 
 
-    private HashMap<String, String> returnHashMapPlayer2(HashMap<String, HashMap<String, String>> auxMap) {
-        String nameForLook = SeleccionDePersonajes.getAliasPlayer2Indictor().getText();
-        HashMap<String, String> mapPlayer2 = auxMap.get(nameForLook);
 
 
-        HashMap<String, String> resultHashMap = new HashMap<>();
 
 
-        if (mapPlayer2 != null) {
-
-            resultHashMap.putAll(mapPlayer2);
-        }
-
-
-        return resultHashMap;
     }
 
 
-}
+
