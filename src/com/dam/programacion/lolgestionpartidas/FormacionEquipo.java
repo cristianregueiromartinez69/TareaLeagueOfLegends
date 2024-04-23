@@ -51,7 +51,7 @@ public class FormacionEquipo extends JFrame {
     private JTextArea confirmAreaPlayer1;
     private JTextArea confirmAreaPlayer2;
     private JButton confirmBothPLayersButton;
-    private static HashMap<HashMap<String, ArrayList<String>>, HashMap<String, String>> playersWithAll = new HashMap<>();
+    private static HashMap<HashMap<String, HashMap<String, String>>, HashMap<String, String>> playersWithAll = new HashMap<>();
     private static HashMap<String, String> championsWithFormationPlayer1 = new HashMap<>();
     private static HashMap<String, String> championsWithFormationPlayer2 = new HashMap<>();
 
@@ -236,8 +236,8 @@ public class FormacionEquipo extends JFrame {
         confirmBothPLayersButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                putValuesPlayersWithAll(SeleccionDePersonajes.getPlayersWithChampions(), getChampionsWithFormationPlayer1());
-                putValuesPlayersWithAll(SeleccionDePersonajes.getPlayersWithChampions(), getChampionsWithFormationPlayer2());
+                putValuesPlayersWithAll(AsignacionRoles.getTrainingRolesPlayer1(), getChampionsWithFormationPlayer1());
+                putValuesPlayersWithAll(AsignacionRoles.getTrainingRolesPlayer2(), getChampionsWithFormationPlayer2());
                 System.out.println(playersWithAll);
                 new Partida();
                 dispose();
@@ -353,11 +353,11 @@ public class FormacionEquipo extends JFrame {
         return item1 != -1;
     }
 
-    public static HashMap<HashMap<String, ArrayList<String>>, HashMap<String, String>> getPlayersWithAll() {
+    public static HashMap<HashMap<String, HashMap<String, String>>, HashMap<String, String>> getPlayersWithAll() {
         return playersWithAll;
     }
 
-    public static void putValuesPlayersWithAll(HashMap<String, ArrayList<String>> keyHashMap, HashMap<String, String> valueHashMap) {
+    public static void putValuesPlayersWithAll(HashMap<String, HashMap<String, String>> keyHashMap, HashMap<String, String> valueHashMap) {
         playersWithAll.put(keyHashMap, valueHashMap);
     }
 
@@ -379,31 +379,7 @@ public class FormacionEquipo extends JFrame {
         championsWithFormationPlayer2.put(key, value);
     }
 
-    private HashMap<String, ArrayList<String>> returnHashMapPlayer1(HashMap<String, ArrayList<String>> auxMap) {
-        String nameForLook = SeleccionDePersonajes.getAliasPlayer1Indictor().getText();
 
-        HashMap<String, ArrayList<String>> resultHashMap = new HashMap<>();
-        if(auxMap.containsKey(nameForLook)){
-            resultHashMap.putAll(auxMap);
-        }
-
-
-
-        return resultHashMap;
-    }
-
-    private HashMap<String, ArrayList<String>> returnHashMapPlayer2(HashMap<String, ArrayList<String>> auxMap) {
-        String nameForLook = SeleccionDePersonajes.getAliasPlayer2Indictor().getText();
-
-        HashMap<String, ArrayList<String>> resultHashMap = new HashMap<>();
-        if(auxMap.containsKey(nameForLook)){
-            resultHashMap.putAll(auxMap);
-        }
-
-
-
-        return resultHashMap;
-    }
 
 
 
