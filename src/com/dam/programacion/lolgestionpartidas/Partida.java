@@ -130,78 +130,88 @@ public class Partida extends JFrame {
         //añadiendo el globalPanelPlayer 1
         globalPanelPlayer1 = new JPanel();
         globalPanelPlayer1.setLayout(new BoxLayout(globalPanelPlayer1, BoxLayout.Y_AXIS));
-        globalPanelPlayer1.setBackground(Color.BLUE.darker());
+        globalPanelPlayer1.setBackground(Color.ORANGE.darker());
         centerPanel.add(globalPanelPlayer1, gbc);
 
         //añadiendo el champion1PLayer1 al globalPanelplayer1
         champion1Player1 = new JPanel();
         champion1Player1.setLayout(new BoxLayout(champion1Player1, BoxLayout.Y_AXIS));
+        champion1Player1.setBackground(null);
         globalPanelPlayer1.add(champion1Player1);
 
         //añadiendo el champion2PLayer1 al globalPanelplayer1
         champion2Player1 = new JPanel();
         champion2Player1.setLayout(new BoxLayout(champion2Player1, BoxLayout.Y_AXIS));
+        champion2Player1.setBackground(null);
         globalPanelPlayer1.add(champion2Player1);
 
         //añadiendo el champion3PLayer1 al globalPanelplayer1
         champion3Player1 = new JPanel();
         champion3Player1.setLayout(new BoxLayout(champion3Player1, BoxLayout.Y_AXIS));
+        champion3Player1.setBackground(null);
         globalPanelPlayer1.add(champion3Player1);
 
         //añadiendo el champion4PLayer1 al globalPanelplayer1
         champion4Player1 = new JPanel();
         champion4Player1.setLayout(new BoxLayout(champion4Player1, BoxLayout.Y_AXIS));
+        champion4Player1.setBackground(null);
         globalPanelPlayer1.add(champion4Player1);
 
         //añadiendo el champion5PLayer1 al globalPanelplayer1
         champion5Player1 = new JPanel();
         champion5Player1.setLayout(new BoxLayout(champion5Player1, BoxLayout.Y_AXIS));
+        champion5Player1.setBackground(null);
         globalPanelPlayer1.add(champion5Player1);
 
         //--------------------------------------------------------------
-        gbc.gridx = 1;
+        gbc.gridx = 4;
         gbc.gridy = 0;
         //añadiendo el globalPanelPlayer2
         globalPanelPlayer2 = new JPanel();
         globalPanelPlayer2.setLayout(new BoxLayout(globalPanelPlayer2, BoxLayout.Y_AXIS));
-        globalPanelPlayer2.setBackground(Color.BLUE.darker());
+        globalPanelPlayer2.setBackground(Color.ORANGE.darker());
         centerPanel.add(globalPanelPlayer2, gbc);
 
         //añadiendo el champion1PLayer2 al globalPanelplayer2
         champion1Player2 = new JPanel();
         champion1Player2.setLayout(new BoxLayout(champion1Player2, BoxLayout.Y_AXIS));
+        champion1Player2.setBackground(null);
         globalPanelPlayer2.add(champion1Player2);
 
         //añadiendo el champion2PLayer2 al globalPanelplayer2
         champion2Player2 = new JPanel();
         champion2Player2.setLayout(new BoxLayout(champion2Player2, BoxLayout.Y_AXIS));
+        champion2Player2.setBackground(null);
         globalPanelPlayer2.add(champion2Player2);
 
         //añadiendo el champion3PLayer2 al globalPanelplayer2
         champion3Player2 = new JPanel();
         champion3Player2.setLayout(new BoxLayout(champion3Player2, BoxLayout.Y_AXIS));
+        champion3Player2.setBackground(null);
         globalPanelPlayer2.add(champion3Player2);
 
         //añadiendo el champion4PLayer2 al globalPanelplayer2
         champion4Player2 = new JPanel();
         champion4Player2.setLayout(new BoxLayout(champion4Player2, BoxLayout.Y_AXIS));
+        champion4Player2.setBackground(null);
         globalPanelPlayer2.add(champion4Player2);
 
         //añadiendo el champion5PLayer2 al globalPanelplayer2
         champion5Player2 = new JPanel();
         champion5Player2.setLayout(new BoxLayout(champion5Player2, BoxLayout.Y_AXIS));
+        champion5Player2.setBackground(null);
         globalPanelPlayer2.add(champion5Player2);
 
         //añadiendo el versusPanel
         gbc.gridx = 2;
         gbc.gridy = 0;
         versusPanel = new JPanel();
-        versusPanel.setLayout(new GridBagLayout());
+        versusPanel.setLayout(new BoxLayout(versusPanel, BoxLayout.X_AXIS));
         centerPanel.add(versusPanel, gbc);
 
         //añadiendo el confirmPanel
-        gbc.gridx = 3;
-        gbc.gridy = 0;
+        gbc.gridx = 2;
+        gbc.gridy = 1;
         confirmPanel = new JPanel();
         confirmPanel.setLayout(new GridBagLayout());
         centerPanel.add(confirmPanel, gbc);
@@ -365,6 +375,15 @@ public class Partida extends JFrame {
         JLabel putImageChampion5Player2 = new JLabel();
         putImageChampion5Player2 = ExtraccionImagenesPartidaJugador2.createImageLabelChampion5Player2(ExtraccionMetodosPartidaJugador2.championsName5Player2(AsignacionRoles.getRolsChampionsPLayer2()) + ".png");
         champion5Player2.add(putImageChampion5Player2);
+
+        //Añadiendo versus al versusPanel
+        JLabel versusLabel = new JLabel();
+        versusLabel = MetodoVersusClasePartida.createImageLabelVersusBothPlayers("versus.png");
+        versusPanel.add(versusLabel);
+        confirmButton = new JButton("Jugar Batalla");
+        confirmButton.setBackground(Color.GREEN);
+        confirmButton.setForeground(Color.WHITE);
+        confirmPanel.add(confirmButton);
 
 
     }
