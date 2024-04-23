@@ -2,6 +2,8 @@ package com.dam.programacion.lolgestionpartidas;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import com.dam.programacion.lol.metodosimagenespartida.*;
 
@@ -384,6 +386,14 @@ public class Partida extends JFrame {
         confirmButton.setBackground(Color.GREEN);
         confirmButton.setForeground(Color.WHITE);
         confirmPanel.add(confirmButton);
+
+        confirmButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new PantallaCargaPartida();
+                dispose();
+            }
+        });
 
 
     }
