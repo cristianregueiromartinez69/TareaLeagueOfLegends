@@ -238,7 +238,6 @@ public class FormacionEquipo extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 putValuesPlayersWithAll(AsignacionRoles.getTrainingRolesPlayer1(), getChampionsWithFormationPlayer1());
                 putValuesPlayersWithAll(AsignacionRoles.getTrainingRolesPlayer2(), getChampionsWithFormationPlayer2());
-                System.out.println(playersWithAll);
                 new Partida();
                 dispose();
             }
