@@ -39,7 +39,7 @@ public class PantallaCargaPartida extends JFrame{
         Timer timer = new Timer(10000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                new GanadorPartida();
                 frame.dispose();
             }
         });
@@ -50,5 +50,6 @@ public class PantallaCargaPartida extends JFrame{
 
         setVisible(true);
     }
+
 
     }

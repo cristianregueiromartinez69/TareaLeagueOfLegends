@@ -1,5 +1,7 @@
 package com.dam.programacion.lolgestionpartidas;
 
+import com.dam.programacion.lol.metodosimagenespartida.GestionVictoriaPartidas;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -242,11 +244,11 @@ public class AsignacionRoles extends JFrame {
 
     }
 
-    public String enterJLabelPlayer1(){
+    public static String enterJLabelPlayer1(){
 
         return SeleccionDePersonajes.getAliasPlayer1Text().getText();
     }
-    public String enterJLabelPlayer2(){
+    public static String enterJLabelPlayer2(){
 
         return SeleccionDePersonajes.getAliasPlayer2Text().getText();
     }

@@ -10,9 +10,9 @@ import com.dam.programacion.lol.metodosimagenespartida.*;
 public class Partida extends JFrame {
 
     private JPanel centerPanel;
-    private JPanel globalPanelPlayer1;
+    private static JPanel globalPanelPlayer1;
     private JPanel versusPanel;
-    private JPanel globalPanelPlayer2;
+    private static JPanel globalPanelPlayer2;
     private JPanel confirmPanel;
 
     //estos paneles van dentro del globalpanelplayer1
@@ -398,5 +398,30 @@ public class Partida extends JFrame {
 
     }
 
+    public JPanel getGlobalPanelPlayer1() {
+        return globalPanelPlayer1;
+    }
 
+    public void setGlobalPanelPlayer1(JPanel globalPanelPlayer1) {
+        Partida.globalPanelPlayer1 = globalPanelPlayer1;
+    }
+
+    public JPanel getGlobalPanelPlayer2() {
+        return globalPanelPlayer2;
+    }
+
+    public void setGlobalPanelPlayer2(JPanel globalPanelPlayer2) {
+        Partida.globalPanelPlayer2 = globalPanelPlayer2;
+    }
+    public static JPanel winPlayer(int poitsChampPlayer1, int poitnsChampPlayer2){
+
+        if (poitsChampPlayer1 >  poitnsChampPlayer2){
+            return globalPanelPlayer1;
+        }
+        else if(poitsChampPlayer1 < poitnsChampPlayer2){
+            return globalPanelPlayer2;
+        }
+
+       return null;
+    }
 }

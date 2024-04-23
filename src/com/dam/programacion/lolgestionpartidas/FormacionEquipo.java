@@ -1,5 +1,7 @@
 package com.dam.programacion.lolgestionpartidas;
 
+import com.dam.programacion.lol.metodosimagenespartida.GestionVictoriaPartidas;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
@@ -54,7 +56,6 @@ public class FormacionEquipo extends JFrame {
     private static HashMap<HashMap<String, HashMap<String, String>>, HashMap<String, String>> playersWithAll = new HashMap<>();
     private static HashMap<String, String> championsWithFormationPlayer1 = new HashMap<>();
     private static HashMap<String, String> championsWithFormationPlayer2 = new HashMap<>();
-
     AsignacionRoles auxObjectAsignation = new AsignacionRoles();
 
     public FormacionEquipo() {
