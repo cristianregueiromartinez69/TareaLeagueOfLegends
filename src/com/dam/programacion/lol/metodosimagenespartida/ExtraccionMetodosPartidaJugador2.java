@@ -58,7 +58,7 @@ public class ExtraccionMetodosPartidaJugador2 {
         for (int i = 0; i < 2; i++) {
             if (iterator.hasNext()) {
                 Map.Entry<String, String> entry = iterator.next();
-                segundoElemento = entry.getKey();
+                segundoElemento = entry.getValue();
             } else {
 
                 return null;
@@ -73,7 +73,7 @@ public class ExtraccionMetodosPartidaJugador2 {
         for (int i = 0; i < 2; i++) {
             if (iterator.hasNext()) {
                 Map.Entry<String, String> entry = iterator.next();
-                segundoElemento = entry.getKey();
+                segundoElemento = entry.getValue();
             } else {
 
                 return null;
@@ -106,7 +106,7 @@ public class ExtraccionMetodosPartidaJugador2 {
         for (int i = 0; i < 3; i++) {
             if (iterator.hasNext()) {
                 Map.Entry<String, String> entry = iterator.next();
-                tercerElemento = entry.getKey();
+                tercerElemento = entry.getValue();
             } else {
 
                 return null;
@@ -121,7 +121,7 @@ public class ExtraccionMetodosPartidaJugador2 {
         for (int i = 0; i < 3; i++) {
             if (iterator.hasNext()) {
                 Map.Entry<String, String> entry = iterator.next();
-                tercerElemento = entry.getKey();
+                tercerElemento = entry.getValue();
             } else {
 
                 return null;
@@ -154,7 +154,7 @@ public class ExtraccionMetodosPartidaJugador2 {
         for (int i = 0; i < 4; i++) {
             if (iterator.hasNext()) {
                 Map.Entry<String, String> entry = iterator.next();
-                cuartoElemento = entry.getKey();
+                cuartoElemento = entry.getValue();
             } else {
 
                 return null;
@@ -169,7 +169,7 @@ public class ExtraccionMetodosPartidaJugador2 {
         for (int i = 0; i < 4; i++) {
             if (iterator.hasNext()) {
                 Map.Entry<String, String> entry = iterator.next();
-                cuartoElemento = entry.getKey();
+                cuartoElemento = entry.getValue();
             } else {
 
                 return null;
@@ -202,7 +202,7 @@ public class ExtraccionMetodosPartidaJugador2 {
         for (int i = 0; i < 5; i++) {
             if (iterator.hasNext()) {
                 Map.Entry<String, String> entry = iterator.next();
-                quintoElemento = entry.getKey();
+                quintoElemento = entry.getValue();
             } else {
 
                 return null;
@@ -217,7 +217,7 @@ public class ExtraccionMetodosPartidaJugador2 {
         for (int i = 0; i < 5; i++) {
             if (iterator.hasNext()) {
                 Map.Entry<String, String> entry = iterator.next();
-                quintoElemento = entry.getKey();
+                quintoElemento = entry.getValue();
             } else {
 
                 return null;

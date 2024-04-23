@@ -2,6 +2,7 @@ package com.dam.programacion.lolgestionpartidas;
 
 import javax.swing.*;
 import java.awt.*;
+
 import com.dam.programacion.lol.metodosimagenespartida.*;
 
 public class Partida extends JFrame {
@@ -111,11 +112,11 @@ public class Partida extends JFrame {
     private JButton confirmButton;
     AsignacionRoles myAsignation = new AsignacionRoles();
 
-    public Partida(){
+    public Partida() {
 
         setTitle("Partida");
         setVisible(true);
-        setBounds(600,600,600,600);
+        setBounds(600, 600, 600, 600);
         //añadiendo el panel central
         centerPanel = new JPanel();
         centerPanel.setLayout(new GridBagLayout());
@@ -124,12 +125,12 @@ public class Partida extends JFrame {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.insets = new Insets(10,10,10,10);
+        gbc.insets = new Insets(10, 10, 10, 10);
 
         //añadiendo el globalPanelPlayer 1
         globalPanelPlayer1 = new JPanel();
         globalPanelPlayer1.setLayout(new BoxLayout(globalPanelPlayer1, BoxLayout.Y_AXIS));
-        globalPanelPlayer1.setBackground(Color.BLACK);
+        globalPanelPlayer1.setBackground(Color.BLUE.darker());
         centerPanel.add(globalPanelPlayer1, gbc);
 
         //añadiendo el champion1PLayer1 al globalPanelplayer1
@@ -163,6 +164,7 @@ public class Partida extends JFrame {
         //añadiendo el globalPanelPlayer2
         globalPanelPlayer2 = new JPanel();
         globalPanelPlayer2.setLayout(new BoxLayout(globalPanelPlayer2, BoxLayout.Y_AXIS));
+        globalPanelPlayer2.setBackground(Color.BLUE.darker());
         centerPanel.add(globalPanelPlayer2, gbc);
 
         //añadiendo el champion1PLayer2 al globalPanelplayer2
@@ -219,7 +221,7 @@ public class Partida extends JFrame {
         player1Champion1Formation = new JLabel();
         player1Champion1Formation.setText("Formacion: " + ExtraccionMetodosPartidaJugador1.championsName1FormationPlayer1(FormacionEquipo.getChampionsWithFormationPlayer1()));
         champion1Player1.add(player1Champion1Formation);
-        JLabel putImageChampion1Player1= new JLabel();
+        JLabel putImageChampion1Player1 = new JLabel();
         putImageChampion1Player1 = ExtraccionImagenesPartidaJugador1.createImageLabelChampion1Player1(ExtraccionMetodosPartidaJugador1.championsName1Player1(AsignacionRoles.getRolsChampionsPLayer1()) + ".png");
         champion1Player1.add(putImageChampion1Player1);
 
@@ -234,7 +236,7 @@ public class Partida extends JFrame {
         player1Champion2Formation = new JLabel();
         player1Champion2Formation.setText("Formacion: " + ExtraccionMetodosPartidaJugador1.championsName2FormationPlayer1(FormacionEquipo.getChampionsWithFormationPlayer1()));
         champion2Player1.add(player1Champion2Formation);
-        JLabel putImageChampion2Player1= new JLabel();
+        JLabel putImageChampion2Player1 = new JLabel();
         putImageChampion2Player1 = ExtraccionImagenesPartidaJugador1.createImageLabelChampion2Player1(ExtraccionMetodosPartidaJugador1.championsName2Player1(AsignacionRoles.getRolsChampionsPLayer1()) + ".png");
         champion2Player1.add(putImageChampion2Player1);
 
@@ -249,7 +251,7 @@ public class Partida extends JFrame {
         player1Champion3Formation = new JLabel();
         player1Champion3Formation.setText("Formacion: " + ExtraccionMetodosPartidaJugador1.championsName3FormationPlayer1(FormacionEquipo.getChampionsWithFormationPlayer1()));
         champion3Player1.add(player1Champion3Formation);
-        JLabel putImageChampion3Player1= new JLabel();
+        JLabel putImageChampion3Player1 = new JLabel();
         putImageChampion3Player1 = ExtraccionImagenesPartidaJugador1.createImageLabelChampion3Player1(ExtraccionMetodosPartidaJugador1.championsName3Player1(AsignacionRoles.getRolsChampionsPLayer1()) + ".png");
         champion3Player1.add(putImageChampion3Player1);
 
@@ -264,7 +266,7 @@ public class Partida extends JFrame {
         player1Champion4Formation = new JLabel();
         player1Champion4Formation.setText("Formacion: " + ExtraccionMetodosPartidaJugador1.championsName4FormationPlayer1(FormacionEquipo.getChampionsWithFormationPlayer1()));
         champion4Player1.add(player1Champion4Formation);
-        JLabel putImageChampion4Player1= new JLabel();
+        JLabel putImageChampion4Player1 = new JLabel();
         putImageChampion4Player1 = ExtraccionImagenesPartidaJugador1.createImageLabelChampion4Player1(ExtraccionMetodosPartidaJugador1.championsName4Player1(AsignacionRoles.getRolsChampionsPLayer1()) + ".png");
         champion4Player1.add(putImageChampion4Player1);
 
@@ -300,8 +302,8 @@ public class Partida extends JFrame {
         player2Champion1Formation = new JLabel();
         player2Champion1Formation.setText("Formacion: " + ExtraccionMetodosPartidaJugador2.championsName1FormationPlayer2(FormacionEquipo.getChampionsWithFormationPlayer2()));
         champion1Player2.add(player2Champion1Formation);
-        JLabel putImageChampion1Player2= new JLabel();
-        putImageChampion1Player2 = ExtraccionImagenesPartidaJugador1.createImageLabelChampion1Player1(ExtraccionMetodosPartidaJugador1.championsName1Player1(AsignacionRoles.getRolsChampionsPLayer1()) + ".png");
+        JLabel putImageChampion1Player2 = new JLabel();
+        putImageChampion1Player2 = ExtraccionImagenesPartidaJugador2.createImageLabelChampion1Player2(ExtraccionMetodosPartidaJugador2.championsName1Player2(AsignacionRoles.getRolsChampionsPLayer2()) + ".png");
         champion1Player2.add(putImageChampion1Player2);
 
         //añadiendo cosas al champion2Player1
@@ -336,62 +338,36 @@ public class Partida extends JFrame {
 
         //añadiendo cosas al champion4Player1
 
-        championName4PLayer1 = new JLabel();
-        championName4PLayer1.setText("Campeon: " + ExtraccionMetodosPartidaJugador1.championsName4Player1(AsignacionRoles.getRolsChampionsPLayer1()));
-        champion4Player1.add(championName4PLayer1);
-        player1Champion4Role = new JLabel();
-        player1Champion4Role.setText("Rol: " + ExtraccionMetodosPartidaJugador1.championsName4RolPlayer1(AsignacionRoles.getRolsChampionsPLayer1()));
-        champion4Player1.add(player1Champion4Role);
-        player1Champion4Formation = new JLabel();
-        player1Champion4Formation.setText("Formacion: " + ExtraccionMetodosPartidaJugador1.championsName4FormationPlayer1(FormacionEquipo.getChampionsWithFormationPlayer1()));
-        champion4Player1.add(player1Champion4Formation);
-        JLabel putImageChampion4Player1= new JLabel();
-        putImageChampion4Player1 = ExtraccionImagenesPartidaJugador1.createImageLabelChampion4Player1(ExtraccionMetodosPartidaJugador1.championsName4Player1(AsignacionRoles.getRolsChampionsPLayer1()) + ".png");
-        champion4Player1.add(putImageChampion4Player1);
+        championName4PLayer2 = new JLabel();
+        championName4PLayer2.setText("Campeon: " + ExtraccionMetodosPartidaJugador2.championsName4Player2(AsignacionRoles.getRolsChampionsPLayer2()));
+        champion4Player2.add(championName4PLayer2);
+        player2Champion4Role = new JLabel();
+        player2Champion4Role.setText("Rol: " + ExtraccionMetodosPartidaJugador2.championsName4RolPlayer2(AsignacionRoles.getRolsChampionsPLayer2()));
+        champion4Player2.add(player2Champion4Role);
+        player2Champion4Formation = new JLabel();
+        player2Champion4Formation.setText("Formacion: " + ExtraccionMetodosPartidaJugador2.championsName4FormationPlayer2(FormacionEquipo.getChampionsWithFormationPlayer2()));
+        champion4Player2.add(player2Champion4Formation);
+        JLabel putImageChampion4Player2 = new JLabel();
+        putImageChampion4Player2 = ExtraccionImagenesPartidaJugador2.createImageLabelChampion4Player2(ExtraccionMetodosPartidaJugador2.championsName4Player2(AsignacionRoles.getRolsChampionsPLayer2()) + ".png");
+        champion4Player2.add(putImageChampion4Player2);
 
         //añadiendo cosas al champion5Player1
 
-        championName5PLayer1 = new JLabel();
-        championName5PLayer1.setText("Campeon: " + ExtraccionMetodosPartidaJugador1.championsName5Player1(AsignacionRoles.getRolsChampionsPLayer1()));
-        champion5Player1.add(championName5PLayer1);
-        player1Champion5Role = new JLabel();
-        player1Champion5Role.setText("Rol: " + ExtraccionMetodosPartidaJugador1.championsName5RolPlayer1(AsignacionRoles.getRolsChampionsPLayer1()));
-        champion5Player1.add(player1Champion5Role);
-        player1Champion5Formation = new JLabel();
-        player1Champion5Formation.setText("Formacion: " + ExtraccionMetodosPartidaJugador1.championsName5FormationPlayer1(FormacionEquipo.getChampionsWithFormationPlayer1()));
-        champion5Player1.add(player1Champion5Formation);
-        JLabel putImageChampion5Player1 = new JLabel();
-        putImageChampion5Player1 = ExtraccionImagenesPartidaJugador1.createImageLabelChampion5Player1(ExtraccionMetodosPartidaJugador1.championsName5Player1(AsignacionRoles.getRolsChampionsPLayer1()) + ".png");
-        champion5Player1.add(putImageChampion5Player1);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        championName5PLayer2 = new JLabel();
+        championName5PLayer2.setText("Campeon: " + ExtraccionMetodosPartidaJugador2.championsName5Player2(AsignacionRoles.getRolsChampionsPLayer2()));
+        champion5Player2.add(championName5PLayer2);
+        player2Champion5Role = new JLabel();
+        player2Champion5Role.setText("Rol: " + ExtraccionMetodosPartidaJugador2.championsName5RolPlayer2(AsignacionRoles.getRolsChampionsPLayer2()));
+        champion5Player2.add(player2Champion5Role);
+        player2Champion5Formation = new JLabel();
+        player2Champion5Formation.setText("Formacion: " + ExtraccionMetodosPartidaJugador2.championsName5FormationPlayer2(FormacionEquipo.getChampionsWithFormationPlayer2()));
+        champion5Player2.add(player2Champion5Formation);
+        JLabel putImageChampion5Player2 = new JLabel();
+        putImageChampion5Player2 = ExtraccionImagenesPartidaJugador2.createImageLabelChampion5Player2(ExtraccionMetodosPartidaJugador2.championsName5Player2(AsignacionRoles.getRolsChampionsPLayer2()) + ".png");
+        champion5Player2.add(putImageChampion5Player2);
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
