@@ -1,10 +1,14 @@
 package com.dam.programacion.lol.metodosimagenespartida;
 
 import com.dam.programacion.lolgestionpartidas.AsignacionRoles;
+import com.dam.programacion.lolgestionpartidas.Campeones;
+import com.dam.programacion.lolgestionpartidas.Partida;
 import com.dam.programacion.lolgestionpartidas.SeleccionDePersonajes;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class GestionVictoriaPartidas {
 
@@ -41,6 +45,37 @@ public class GestionVictoriaPartidas {
 
 
         return teamPlayer2;
+    }
+
+    public static JPanel returnWinPlayerPanel(){
+        JPanel winPanel = new JPanel();
+        int valuePoinstPlayer1 = 0;
+        int valuePointsPlayer2 = 0;
+        HashMap<String, Integer> player1 = GestionVictoriaPartidas.winBattlePlayer1(Campeones.getChampionsValues(), SeleccionDePersonajes.getPlayersWithChampions());
+        for (Map.Entry<String, Integer> entry : player1.entrySet()) {
+
+            Integer value = entry.getValue();
+            valuePoinstPlayer1+=value;
+
+        }
+
+        HashMap<String, Integer> player2 = GestionVictoriaPartidas.winBattlePlayer2(Campeones.getChampionsValues(), SeleccionDePersonajes.getPlayersWithChampions());
+
+        for (Map.Entry<String, Integer> entry : player2.entrySet()) {
+
+            Integer value = entry.getValue();
+            valuePointsPlayer2+=value;
+
+        }
+
+        if(valuePoinstPlayer1 > valuePointsPlayer2){
+            winPanel = Partida.getGlobalPanelPlayer1();
+        }
+        else{
+            winPanel = Partida.getGlobalPanelPlayer2();
+        }
+
+        return winPanel;
     }
 
 }

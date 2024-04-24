@@ -1,6 +1,7 @@
 package com.dam.programacion.lolgestionpartidas;
 
 import com.dam.programacion.lol.metodosimagenespartida.GestionVictoriaPartidas;
+import com.dam.programacion.lolmenus.MenuPrincipal;
 
 import javax.swing.*;
 import java.awt.*;
@@ -34,56 +35,25 @@ public class GanadorPartida extends JFrame {
 
 
         centerPanel.setLayout(new OverlayLayout(centerPanel));
-
+        centerPanel.add(GestionVictoriaPartidas.returnWinPlayerPanel());
+        JButton comeBackMenu = new JButton("Volver al menu");
+        comeBackMenu.setBackground(Color.ORANGE);
+        comeBackMenu.setForeground(Color.WHITE);
+        centerPanel.add(comeBackMenu, BorderLayout.SOUTH);
 
         frame.add(centerPanel);
         frame.setVisible(true);
 
-
-        Timer timer = new Timer(10000, new ActionListener() {
+        comeBackMenu.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new GanadorPartida();
-                frame.dispose();
+                new MenuPrincipal();
+                dispose();
             }
         });
-        timer.setRepeats(false);
 
-
-        timer.start();
-
-        setVisible(true);
     }
 
-    public JPanel returnWinPlayerPanel(){
-        JPanel winPanel = new JPanel();
-        int valuePoinstPlayer1 = 0;
-        int valuePointsPlayer2 = 0;
-        HashMap<String, Integer> player1 = GestionVictoriaPartidas.winBattlePlayer1(Campeones.getChampionsValues(), SeleccionDePersonajes.getPlayersWithChampions());
-        for (Map.Entry<String, Integer> entry : player1.entrySet()) {
 
-            Integer value = entry.getValue();
-            valuePoinstPlayer1+=value;
-
-        }
-
-        HashMap<String, Integer> player2 = GestionVictoriaPartidas.winBattlePlayer2(Campeones.getChampionsValues(), SeleccionDePersonajes.getPlayersWithChampions());
-
-        for (Map.Entry<String, Integer> entry : player2.entrySet()) {
-
-            Integer value = entry.getValue();
-            valuePointsPlayer2+=value;
-
-        }
-
-        if(valuePoinstPlayer1 > valuePointsPlayer2){
-            winPanel = Partida.getGlobalPanelPlayer1();
-        }
-        else{
-            winPanel = Partida.getGlobalPanelPlayer2();
-        }
-
-        return winPanel;
-    }
 
 }

@@ -31,24 +31,22 @@ public class PantallaCargaPartida extends JFrame{
 
         centerPanel.setLayout(new OverlayLayout(centerPanel));
 
+        JButton buttonFinishBatlle = new JButton("Finish");
+        buttonFinishBatlle.setBackground(Color.MAGENTA);
+        buttonFinishBatlle.setForeground(Color.WHITE);
+        centerPanel.add(buttonFinishBatlle, BorderLayout.SOUTH);
 
         frame.add(centerPanel);
         frame.setVisible(true);
 
 
-        Timer timer = new Timer(10000, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new GanadorPartida();
-                frame.dispose();
-            }
-        });
-        timer.setRepeats(false);
-
-
-        timer.start();
-
-        setVisible(true);
+      buttonFinishBatlle.addActionListener(new ActionListener() {
+          @Override
+          public void actionPerformed(ActionEvent e) {
+              new GanadorPartida();
+              dispose();
+          }
+      });
     }
 
 
