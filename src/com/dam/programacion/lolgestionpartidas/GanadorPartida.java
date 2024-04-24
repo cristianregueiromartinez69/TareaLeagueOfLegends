@@ -55,13 +55,35 @@ public class GanadorPartida extends JFrame {
         setVisible(true);
     }
 
-    public void winsBattle(){
+    public JPanel returnWinPlayerPanel(){
         JPanel winPanel = new JPanel();
+        int valuePoinstPlayer1 = 0;
+        int valuePointsPlayer2 = 0;
         HashMap<String, Integer> player1 = GestionVictoriaPartidas.winBattlePlayer1(Campeones.getChampionsValues(), SeleccionDePersonajes.getPlayersWithChampions());
-        System.out.println(player1.toString());
-        HashMap<String, Integer> player2 = GestionVictoriaPartidas.winBattlePlayer2(Campeones.getChampionsValues(), SeleccionDePersonajes.getPlayersWithChampions());
-        System.out.println(player2.toString());
+        for (Map.Entry<String, Integer> entry : player1.entrySet()) {
 
+            Integer value = entry.getValue();
+            valuePoinstPlayer1+=value;
+
+        }
+
+        HashMap<String, Integer> player2 = GestionVictoriaPartidas.winBattlePlayer2(Campeones.getChampionsValues(), SeleccionDePersonajes.getPlayersWithChampions());
+
+        for (Map.Entry<String, Integer> entry : player2.entrySet()) {
+
+            Integer value = entry.getValue();
+            valuePointsPlayer2+=value;
+
+        }
+
+        if(valuePoinstPlayer1 > valuePointsPlayer2){
+            winPanel = Partida.getGlobalPanelPlayer1();
+        }
+        else{
+            winPanel = Partida.getGlobalPanelPlayer2();
+        }
+
+        return winPanel;
     }
 
 }

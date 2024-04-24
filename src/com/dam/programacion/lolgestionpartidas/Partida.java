@@ -398,7 +398,7 @@ public class Partida extends JFrame {
 
     }
 
-    public JPanel getGlobalPanelPlayer1() {
+    public static JPanel getGlobalPanelPlayer1() {
         return globalPanelPlayer1;
     }
 
@@ -406,7 +406,7 @@ public class Partida extends JFrame {
         Partida.globalPanelPlayer1 = globalPanelPlayer1;
     }
 
-    public JPanel getGlobalPanelPlayer2() {
+    public static JPanel getGlobalPanelPlayer2() {
         return globalPanelPlayer2;
     }
 
