@@ -50,8 +50,8 @@ public class VerEquiposUsados extends JFrame {
         globalPanel.setLayout(new BorderLayout());
         centerPanel.add(globalPanel, gbc);
 
-        gbc.gridx = 1;
-        gbc.gridy = 0;
+        gbc.gridx = 0;
+        gbc.gridy = 2;
         textPanel = new JPanel();
         textPanel.setLayout(new BorderLayout());
         centerPanel.add(textPanel, gbc);
@@ -63,12 +63,12 @@ public class VerEquiposUsados extends JFrame {
 
         informationPlayers = new JTextArea();
         informationPlayers.setEditable(false);
-        informationPlayers.setPreferredSize(new Dimension(200, 100));
-        textPanel.add(informationPlayers);
+        informationPlayers.setPreferredSize(new Dimension(1200, 100));
+        textPanel.add(new JScrollPane(informationPlayers), BorderLayout.NORTH);
         comebackMenu = new JButton("Volver al menu");
         comebackMenu.setBackground(Color.BLUE);
         comebackMenu.setForeground(Color.WHITE);
-        textPanel.add(comebackMenu);
+        textPanel.add(comebackMenu, BorderLayout.SOUTH);
         battlesBox.addActionListener(this::putInformationPlayer);
         comebackMenu.addActionListener(new ActionListener() {
             @Override
@@ -97,14 +97,14 @@ public class VerEquiposUsados extends JFrame {
             globalPanel.add(Partida.getGlobalPanelPlayer1());
             globalPanel.revalidate();
             globalPanel.repaint();
-            informationPlayers.setText(loadingInformationPlayer1(InformacionJugador1.saveInformationPlayer1(SeleccionDePersonajes.getPlayersWithChampions(), AsignacionRoles.getRolsChampionsPLayer1(), FormacionEquipo.getChampionsWithFormationPlayer1())));
+
         } else if (teamName.equals(teamPlayer2)) {
             informationPlayers.setText(loadingInformationPlayer2(InformacionJugador2.saveInformationPlayer2(SeleccionDePersonajes.getPlayersWithChampions(), AsignacionRoles.getRolsChampionsPLayer2(), FormacionEquipo.getChampionsWithFormationPlayer2())));
             globalPanel.removeAll();
             globalPanel.add(Partida.getGlobalPanelPlayer2());
             globalPanel.revalidate();
             globalPanel.repaint();
-            informationPlayers.setText(loadingInformationPlayer2(InformacionJugador2.saveInformationPlayer2(SeleccionDePersonajes.getPlayersWithChampions(), AsignacionRoles.getRolsChampionsPLayer2(), FormacionEquipo.getChampionsWithFormationPlayer2())));
+
         }
     }
 
