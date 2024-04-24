@@ -9,7 +9,7 @@ import com.dam.programacion.lol.metodosimagenespartida.*;
 
 public class Partida extends JFrame {
 
-    private JPanel centerPanel;
+    private static JPanel centerPanel;
     private static JPanel globalPanelPlayer1;
     private JPanel versusPanel;
     private static JPanel globalPanelPlayer2;
@@ -423,5 +423,13 @@ public class Partida extends JFrame {
         }
 
        return null;
+    }
+
+    public static JPanel getCenterPanel() {
+        return centerPanel;
+    }
+
+    public static void setCenterPanel(JPanel centerPanel) {
+        Partida.centerPanel = centerPanel;
     }
 }
