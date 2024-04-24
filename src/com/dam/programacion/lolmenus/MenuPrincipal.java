@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MenuPrincipal {
+public class MenuPrincipal extends JFrame{
 
     private JPanel centerPanel;
     private JButton createAccounts;
@@ -76,18 +76,21 @@ public class MenuPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new SeleccionDePersonajes();
+
             }
         });
         viewUsesTeams.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new VerEquiposUsados();
+
             }
         });
         viewGamesPlayed.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new VerPartidasJugadas();
+
             }
         });
     }
