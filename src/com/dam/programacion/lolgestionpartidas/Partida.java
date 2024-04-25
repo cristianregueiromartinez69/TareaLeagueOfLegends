@@ -448,11 +448,21 @@ public class Partida extends JFrame {
     }
 
     protected static JPanel auxBatllesPanel(){
-        JPanel auxWinPanel = new JPanel(new GridLayout(1, 2));
+        JPanel auxWinPanel = new JPanel(new GridLayout(1, 3));
+
+
+        JPanel playerPanelsContainer = new JPanel(new GridLayout(1, 2));
+        playerPanelsContainer.add(globalPanelPlayer1);
+        playerPanelsContainer.add(globalPanelPlayer2);
+
+
         auxWinPanel.add(globalPanelPlayer1);
+        auxWinPanel.add(versusPanel);
         auxWinPanel.add(globalPanelPlayer2);
+
         return auxWinPanel;
     }
+
 
 
 }

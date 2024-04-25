@@ -90,13 +90,12 @@ public class VerPartidasJugadas extends JFrame {
         for (String b : Partida.getBattleVictorysPanel().keySet()) {
             if (b.equals(battle)) {
                 JPanel battleVictoryPanel = Partida.getBattleVictorysPanel().get(battle);
+                battleVictoryPanel.add(Partida.getGlobalPanelPlayer2(), BorderLayout.EAST);
 
 
-                JPanel containerPanel = new JPanel(new GridLayout(1, 10));
-                containerPanel.add(battleVictoryPanel);
 
 
-                battlePanel.add(containerPanel);
+                battlePanel.add(battleVictoryPanel);
 
 
                 informationBattles.setText(FormacionEquipo.getPlayersWithAll().toString());
