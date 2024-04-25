@@ -57,7 +57,7 @@ public class VerPartidasJugadas extends JFrame {
 
         informationBattles = new JTextArea();
         informationBattles.setEditable(false);
-        informationBattles.setPreferredSize(new Dimension(1200, 100));
+        informationBattles.setPreferredSize(new Dimension(1800, 100));
         textPanel.add(new JScrollPane(informationBattles), BorderLayout.NORTH);
         comebackMenu = new JButton("Volver al menu");
         comebackMenu.setBackground(Color.BLUE);
@@ -86,14 +86,28 @@ public class VerPartidasJugadas extends JFrame {
         String battle = (String) battlesBox.getSelectedItem();
 
 
-            informationBattles.setText(FormacionEquipo.getPlayersWithAll().toString());
-            battlePanel.removeAll();
-            battlePanel.add(Partida.getCenterPanel());
-            battlePanel.revalidate();
-            battlePanel.repaint();
+
+        for (String b : Partida.getBattleVictorysPanel().keySet()) {
+            if (b.equals(battle)) {
+                JPanel battleVictoryPanel = Partida.getBattleVictorysPanel().get(battle);
 
 
+                JPanel containerPanel = new JPanel(new GridLayout(1, 10));
+                containerPanel.add(battleVictoryPanel);
+
+
+                battlePanel.add(containerPanel);
+
+
+                informationBattles.setText(FormacionEquipo.getPlayersWithAll().toString());
+                break;
+            }
+        }
+
+        battlePanel.revalidate();
+        battlePanel.repaint();
     }
+
 
 }
 

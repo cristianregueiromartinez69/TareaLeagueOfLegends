@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 
 import com.dam.programacion.lol.metodosimagenespartida.*;
 
@@ -11,9 +12,10 @@ public class Partida extends JFrame {
 
     private static JPanel centerPanel;
     private static JPanel globalPanelPlayer1;
-    private JPanel versusPanel;
+    private static JPanel versusPanel;
     private static JPanel globalPanelPlayer2;
     private JPanel confirmPanel;
+
 
     //estos paneles van dentro del globalpanelplayer1
     private JPanel champion1Player1;
@@ -112,6 +114,7 @@ public class Partida extends JFrame {
 
     //esto va dentro del confirmPanel
     private JButton confirmButton;
+    private static HashMap<String, JPanel> battleVictorysPanel = new HashMap<>();
     AsignacionRoles myAsignation = new AsignacionRoles();
 
     public Partida() {
@@ -297,6 +300,7 @@ public class Partida extends JFrame {
         putImageChampion5Player1 = ExtraccionImagenesPartidaJugador1.createImageLabelChampion5Player1(ExtraccionMetodosPartidaJugador1.championsName5Player1(AsignacionRoles.getRolsChampionsPLayer1()) + ".png");
         champion5Player1.add(putImageChampion5Player1);
 
+
         //------------------------------------------------//
 
         //añadiendo cosas al globalPanelPlayer2
@@ -390,6 +394,8 @@ public class Partida extends JFrame {
         confirmButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String nameBattle = AsignacionRoles.enterJLabelPlayer1() + " vs " + AsignacionRoles.enterJLabelPlayer2();
+                battleVictorysPanel.put(nameBattle, auxBatllesPanel());
                 new PantallaCargaPartida();
                 dispose();
             }
@@ -432,4 +438,21 @@ public class Partida extends JFrame {
     public static void setCenterPanel(JPanel centerPanel) {
         Partida.centerPanel = centerPanel;
     }
+
+    public static HashMap<String, JPanel> getBattleVictorysPanel() {
+        return battleVictorysPanel;
+    }
+
+    public static void setBattleVictorysPanel(HashMap<String, JPanel> battleVictorysPanel) {
+        Partida.battleVictorysPanel = battleVictorysPanel;
+    }
+
+    protected static JPanel auxBatllesPanel(){
+        JPanel auxWinPanel = new JPanel(new GridLayout(1, 2));
+        auxWinPanel.add(globalPanelPlayer1);
+        auxWinPanel.add(globalPanelPlayer2);
+        return auxWinPanel;
+    }
+
+
 }
